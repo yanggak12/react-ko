@@ -1,5 +1,6 @@
 # react-ko
-Study node.js &amp; react.js, and let use them !
+Study React with Redux or Mobx. 
+Additional, Study with TypeScript.
 
 ## This repository is my study area.
 
