@@ -254,3 +254,53 @@ componentDidMount() {
 state가 소유하고 설정한 컴포넌트 이외에는 어떠한 컴포넌트에도 접근할 수 없다.
 
 컴포넌트는 자신의 state를 자식 컴포넌트에 props로 전달할 수 있다.
+
+### 이벤트 처리
+
+React 엘리먼트의 이벤트 처리방싱근 DOM 엘리먼트의 이벤트 처리 방식과 매우 유사하다.
+
+차이점
+
+- 캐멀 케이스 명명
+- 문자열이 아닌 함수로 이벤트 핸들러 전달
+- preventDefault를 명시적으로 호출해야지만 기본 동작을 방지 가능. (false 반환 x)
+
+**this 바인딩**
+
+```jsx
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // 콜백에서 `this`가 작동하려면 아래와 같이 바인딩 해주어야 합니다.
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+- JavaScript에서 클래스 메소드는 기본적으로 바인딩 되어 있지 않다
+- this.handleClick 이 작동하려면 constructor에서 바인딩을 해주어야 한다.
+- 바인딩을 하지 않아도 되는 방법
+    - 클래스 필드를 사용하여 콜백을 바인딩 (퍼블릭 클래스 필드 문법 - CRA에서는 작동 default)
+    - Arrow Function
+    
