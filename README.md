@@ -29,8 +29,6 @@ React 앱의 가장 작은 단위.
     
     W3C의 표준 객체 모델이며 계층 구조를 띔.
     
-    ![스크린샷 2022-01-03 오후 1.34.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c70a5c0c-aa89-45d9-93cc-84c122520138/스크린샷_2022-01-03_오후_1.34.36.png)
-    
 
 React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트한다.
 
