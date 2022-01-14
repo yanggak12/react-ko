@@ -199,7 +199,6 @@ this.setState({ name : 'yoonsang' });
 
 setState 될 new State가 prev State와 의존관계에 있어서는 안된다.
 
-즉, 
 
 ```jsx
 // Wrong
