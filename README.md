@@ -295,6 +295,7 @@ ReactDOM.render(
 );
 ```
 
+
 - JavaScript에서 클래스 메소드는 기본적으로 바인딩 되어 있지 않다
 - this.handleClick 이 작동하려면 constructor에서 바인딩을 해주어야 한다.
 - 바인딩을 하지 않아도 되는 방법
